@@ -162,6 +162,8 @@
   border: none;
   padding: 0%;
   margin: 0%;
+  text-decoration: none;
+  list-style: none;
 }
 
 .slideshow {
@@ -177,4 +179,131 @@
 .slider-image {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+}
+
+.logo-box {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 48px;
+  left: 52px;
+}
+
+.company-name {
+  font-family: Poppins;
+  font-size: 40px;
+  font-weight: bolder;
+  letter-spacing: 1.2px;
+  color: #1a1a1a;
+}
+
+.logo-name-box {
+  display: flex;
+  align-items: baseline;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #0081ff;
+}
+
+.resume-name {
+  font-family: Montserrat;
+  font-size: 13px;
+  color: #b3b3b3;
+}
+
+.number-box {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 227px;
+  height: 221px;
+  top: 25px;
+  right: 81.68px;
+}
+
+.number {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.number-one {
+  font-family: Poppins;
+  font-size: 158.3px;
+  letter-spacing: 4.75px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.about {
+  font-family: Poppins;
+  font-size: 43.17px;
+  letter-spacing: 1.3px;
+  width: 227px;
+  color: #373737;
+  position: absolute;
+}
+
+.id-card {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 385px;
+  right: 308px;
+}
+
+.id-social-box {
+  display: flex;
+  gap: 13px;
+  margin-left: 7px;
+  align-items: center;
+}
+
+.id-text {
+  font-family: GlacialIndifference;
+  font-size: 49.7px;
+  letter-spacing: 0.75px;
+  margin-bottom: 10px;
+}
+
+.id-name {
+  font-family: GlacialIndifference;
+  font-size: 71px;
+  letter-spacing: 1.05px;
+  font-weight: 400;
+  margin-bottom: 7px;
+}
+
+.id-work {
+  font-family: GlacialIndifference;
+  font-size: 23px;
+  margin-bottom: 45px;
+}
+
+.message-text {
+  font-family: Montserrat;
+  font-size: 24px;
+}
+
+.bar {
+  width: 340px;
+  height: 6px;
+  color: #e93656;
+
+  z-index: 10;
+}
+
+.message-box {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 47px;
+  right: 90px;
 }
