@@ -290,14 +290,22 @@
 .message-text {
   font-family: Montserrat;
   font-size: 24px;
+  margin-bottom: 10px;
 }
 
-.bar {
+#progress-bar-container {
   width: 340px;
   height: 6px;
-  color: #e93656;
+  background-color: lightgray;
+  position: relative;
+  border-radius: 25px;
+}
 
-  z-index: 10;
+#progress-bar {
+  height: 100%;
+  background-color: #e93656;
+  transition: width 2s ease;
+  border-radius: 25px;
 }
 
 .message-box {
@@ -306,4 +314,25 @@
   position: absolute;
   bottom: 47px;
   right: 90px;
+}
+
+.about {
+  width: 100%;
+  height: 913px;
+  margin-top: 135px;
+  display: flex;
+  justify-content: center;
+}
+
+.about-author {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2%;
+  height: 603px;
+}
+
+.profile-text {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
 }

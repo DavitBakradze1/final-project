@@ -26,3 +26,13 @@ function showSlide(slideNumber) {
 }
 
 setInterval(() => showSlide(index), transitionDelay);
+
+document.addEventListener("DOMContentLoaded", function () {
+  var progressBar = document.getElementById("progress-bar");
+
+  progressBar.style.width = "0%";
+
+  setTimeout(function () {
+    progressBar.style.width = "100%";
+  }, 2000); // Adjust the delay as needed
+});
