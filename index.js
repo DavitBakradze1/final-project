@@ -34,5 +34,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
   setTimeout(function () {
     progressBar.style.width = "100%";
-  }, 2000); // Adjust the delay as needed
+  }, 2000);
 });
+
+function animateSkillsLevel(entries, observer) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      const targetWidth = entry.target.dataset.stopPercentage || 100;
+      entry.target.style.width = `${targetWidth}%`;
+      entry.target.style.opacity = 1;
+      observer.unobserve(entry.target);
+    }
+  });
+}
+
+var observer = new IntersectionObserver(animateSkillsLevel, { threshold: 0.5 });
+
+document.querySelectorAll(".skills-level").forEach((skillsLevel) => {
+  observer.observe(skillsLevel);
+});
+
+document.getElementById("skills-level1").dataset.stopPercentage = 85;
+document.getElementById("skills-level2").dataset.stopPercentage = 65;
+document.getElementById("skills-level3").dataset.stopPercentage = 50;
+document.getElementById("skills-level4").dataset.stopPercentage = 30;
