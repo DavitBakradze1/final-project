@@ -48,7 +48,7 @@ function animateSkillsLevel(entries, observer) {
   });
 }
 
-var observer = new IntersectionObserver(animateSkillsLevel, { threshold: 0.5 });
+let observer = new IntersectionObserver(animateSkillsLevel, { threshold: 0.5 });
 
 document.querySelectorAll(".skills-level").forEach((skillsLevel) => {
   observer.observe(skillsLevel);
@@ -58,3 +58,50 @@ document.getElementById("skills-level1").dataset.stopPercentage = 85;
 document.getElementById("skills-level2").dataset.stopPercentage = 65;
 document.getElementById("skills-level3").dataset.stopPercentage = 50;
 document.getElementById("skills-level4").dataset.stopPercentage = 30;
+
+let cardData = [
+  {
+    image: "images/d4.svg",
+    name: "John Doe",
+    profession: "Software Engineer",
+    messages: [
+      "Develop an e-commerce platform with secure payment processing, user authentication, and dynamic product pages. Implement responsive design for seamless user experience across devices...",
+    ],
+  },
+  {
+    image: "images/d3.svg",
+    name: "Jane Smith",
+    profession: "Graphic Designer",
+    messages: [
+      "Create a personal portfolio showcasing projects, skills, and achievements. Design an elegant, mobile-friendly interface with smooth navigation. Incorporate interactive elements to highlight expertise...",
+    ],
+  },
+  {
+    image: "images/d5.svg",
+    name: "Alice Johnson",
+    profession: "Web Developer",
+    messages: [
+      "Build a social media dashboard to aggregate and display user data. Use API integration for real-time updates, implement data visualization, and ensure a user-friendly interface for easy interaction...",
+    ],
+  },
+];
+
+function changeCard(cardNumber) {
+  let cardImage = document.getElementById("cardImage");
+  let recomendatorName = document.querySelector(".recomendator-name");
+  let recomendatorProfession = document.querySelector(
+    ".recomendator-proffesion"
+  );
+  let cardMessage = document.getElementById("cardMessage");
+
+  cardImage.src = cardData[cardNumber - 1].image;
+  recomendatorName.textContent = cardData[cardNumber - 1].name;
+  recomendatorProfession.textContent = cardData[cardNumber - 1].profession;
+
+  let randomIndex = Math.floor(
+    Math.random() * cardData[cardNumber - 1].messages.length
+  );
+  cardMessage.textContent = cardData[cardNumber - 1].messages[randomIndex];
+}
+
+changeCard(1);

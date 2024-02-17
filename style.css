@@ -204,7 +204,7 @@
   align-items: baseline;
 }
 
-.dot {
+.name-dot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
@@ -241,6 +241,7 @@
   position: relative;
   display: flex;
   align-items: center;
+  color: #1c1c1c;
 }
 
 .about {
@@ -608,4 +609,102 @@ p {
   font-size: 14px;
   letter-spacing: 0.42px;
   color: #ececec;
+}
+
+.recomendation {
+  width: 100%;
+  height: 570px;
+  background-image: url(images/clip.jpg);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.my-recomendations {
+  display: flex;
+  align-items: center;
+  gap: 130px;
+}
+
+#cardContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 20px;
+}
+
+.dot {
+  height: 20px;
+  width: 20px;
+  background-color: #bbb;
+  border-radius: 50%;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.recomendator {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+#cardMessage {
+  width: 497px;
+  height: 78px;
+  text-align: right;
+  font-family: Roboto;
+  font-size: 15px;
+  letter-spacing: 0.45px;
+  color: #ffffff;
+}
+
+.recomendator-photo-box {
+  width: 170px;
+  height: 170px;
+  border: 2px dashed #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#cardImage {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+}
+
+.recomendator-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.recomendator-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.recomendator-name {
+  font-family: Glacial Indifference;
+  font-size: 28px;
+  letter-spacing: 0.84px;
+  color: #ffffff;
+  width: 200px;
+}
+
+.recomendator-proffesion {
+  font-family: Roboto;
+  font-size: 13px;
+  letter-spacing: 0.52px;
+  margin-bottom: 9px;
+  color: #e93656;
+  width: 200px;
+}
+
+.quote-box {
+  width: 200px;
+  margin-bottom: 38px;
 }
