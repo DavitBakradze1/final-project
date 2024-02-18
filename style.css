@@ -708,3 +708,77 @@ p {
   width: 200px;
   margin-bottom: 38px;
 }
+
+.projects {
+  width: 100%;
+  padding-top: 144px;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-head-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.project-heading {
+  font-family: Glacial Indifference;
+  font-size: 70px;
+  font-weight: 400;
+  color: #2e2e2e;
+}
+
+.project-grid-box {
+  display: flex;
+  align-items: top;
+  justify-content: center;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: 300px 900px;
+  gap: 30px;
+}
+
+.project-name-box {
+  display: flex;
+  flex-direction: column;
+  padding-top: 51px;
+  padding-left: 59px;
+  width: 240px;
+  height: 401px;
+  background-color: #15263e;
+  gap: 20px;
+}
+
+.project-name {
+  font-family: Glacial Indifference;
+  font-size: 20px;
+  color: #ffffff;
+  transition: all 0.3s;
+  transition-delay: 0.2s;
+  cursor: pointer;
+}
+
+.project-name.clicked {
+  color: #e93656;
+}
+
+.projects-box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 350px 350px;
+}
+
+.project-card {
+  width: 300px;
+  height: 350px;
+  background-color: lightgray;
+  border: 1px solid #e93656;
+}
+
+.project-card.active {
+  display: block;
+}

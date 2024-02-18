@@ -105,3 +105,46 @@ function changeCard(cardNumber) {
 }
 
 changeCard(1);
+
+let projectNames = document.querySelectorAll(".project-name");
+
+projectNames.forEach(function (element) {
+  element.addEventListener("click", function () {
+    projectNames.forEach(function (el) {
+      el.classList.remove("clicked");
+    });
+
+    this.classList.add("clicked");
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  var projectNames = document.querySelectorAll(".project-name");
+  var projectCards = document.querySelectorAll(".project-card");
+
+  projectNames.forEach(function (element) {
+    element.addEventListener("click", function () {
+      var category = this.getAttribute("data-filter");
+
+      // Remove the "clicked" class from all project names
+      projectNames.forEach(function (el) {
+        el.classList.remove("clicked");
+      });
+
+      // Add the "clicked" class to the clicked project name
+      this.classList.add("clicked");
+
+      // Show only the project card corresponding to the clicked category, hide others
+      projectCards.forEach(function (card) {
+        if (
+          category === "all" ||
+          card.getAttribute("data-category") === category
+        ) {
+          card.classList.add("active");
+        } else {
+          card.classList.remove("active");
+        }
+      });
+    });
+  });
+});
