@@ -740,6 +740,7 @@ p {
   display: grid;
   grid-template-columns: 300px 900px;
   gap: 30px;
+  padding-top: 55px;
 }
 
 .project-name-box {
@@ -751,6 +752,12 @@ p {
   height: 401px;
   background-color: #15263e;
   gap: 20px;
+  font-family: Glacial Indifference;
+  font-size: 20px;
+  color: #ffffff;
+  transition: all 0.3s;
+  transition-delay: 0.2s;
+  cursor: pointer;
 }
 
 .project-name {
@@ -773,12 +780,20 @@ p {
 }
 
 .project-card {
-  width: 300px;
-  height: 350px;
-  background-color: lightgray;
-  border: 1px solid #e93656;
+  display: none;
+  border: 1px solid #ccc;
+  background-color: #131a36;
+  transition: all 0.3s ease-in-out;
+  transition-delay: 0.2s;
 }
 
-.project-card.active {
-  display: block;
+.project-card.large {
+  width: 900px;
+  height: 700px;
+}
+
+.project-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 350px 350px;
 }

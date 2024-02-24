@@ -118,33 +118,33 @@ projectNames.forEach(function (element) {
   });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  var projectNames = document.querySelectorAll(".project-name");
-  var projectCards = document.querySelectorAll(".project-card");
+function filterProjects(category) {
+  let cards = document.querySelectorAll(".project-card");
 
-  projectNames.forEach(function (element) {
-    element.addEventListener("click", function () {
-      var category = this.getAttribute("data-filter");
+  cards.forEach(function (card) {
+    let cardCategory = card.getAttribute("data-category");
+    if (category === "all" || category === cardCategory) {
+      card.style.display = "block";
 
-      // Remove the "clicked" class from all project names
-      projectNames.forEach(function (el) {
-        el.classList.remove("clicked");
-      });
-
-      // Add the "clicked" class to the clicked project name
-      this.classList.add("clicked");
-
-      // Show only the project card corresponding to the clicked category, hide others
-      projectCards.forEach(function (card) {
-        if (
-          category === "all" ||
-          card.getAttribute("data-category") === category
-        ) {
-          card.classList.add("active");
-        } else {
-          card.classList.remove("active");
-        }
-      });
-    });
+      let categoriesWithLargeSize = [
+        "workIdeas",
+        "mockup",
+        "psdDesign",
+        "logo",
+        "presentation",
+        "icons",
+      ];
+      if (categoriesWithLargeSize.includes(category)) {
+        card.classList.add("large");
+      } else {
+        card.classList.remove("large");
+      }
+    } else {
+      card.style.display = "none";
+    }
   });
-});
+}
+
+window.onload = function () {
+  filterProjects("all");
+};

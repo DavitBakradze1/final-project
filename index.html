@@ -364,13 +364,38 @@
         <div class="project-grid-box">
           <div class="project-grid">
             <div class="project-name-box">
-              <span class="project-name">All</span>
-              <span class="project-name">Work ideas</span>
-              <span class="project-name">Mockup</span>
-              <span class="project-name">PSD Design</span>
-              <span class="project-name"> Logo</span>
-              <span class="project-name">Presentation</span>
-              <span class="project-name">Icons</span>
+              <span class="project-name" onclick="filterProjects('all')"
+                >All</span
+              >
+              <span class="project-name" onclick="filterProjects('workIdeas')"
+                >Work ideas</span
+              >
+              <span class="project-name" onclick="filterProjects('mockup')"
+                >Mockup</span
+              >
+              <span class="project-name" onclick="filterProjects('psdDesign')"
+                >PSD Design</span
+              >
+              <span class="project-name" onclick="filterProjects('logo')"
+                >Logo</span
+              >
+              <span
+                class="project-name"
+                onclick="filterProjects('presentation')"
+                >Presentation</span
+              >
+              <span class="project-name" onclick="filterProjects('icons')"
+                >Icons</span
+              >
+            </div>
+
+            <div class="project-cards">
+              <div class="project-card" data-category="workIdeas"></div>
+              <div class="project-card" data-category="mockup"></div>
+              <div class="project-card" data-category="psdDesign"></div>
+              <div class="project-card" data-category="logo"></div>
+              <div class="project-card" data-category="presentation"></div>
+              <div class="project-card" data-category="icons"></div>
             </div>
           </div>
         </div>
