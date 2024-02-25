@@ -148,3 +148,70 @@ function filterProjects(category) {
 window.onload = function () {
   filterProjects("all");
 };
+
+function validateForm() {
+  clearErrorMessages();
+
+  const yourNameInput = document.getElementById("YourName");
+  const yourNameValue = yourNameInput.value.trim();
+  if (yourNameValue.length < 3) {
+    displayErrorMessage("Your Name must be at least 3 characters.");
+    return;
+  }
+
+  const emailInput = document.getElementById("EmailAddress");
+  const emailValue = emailInput.value.trim();
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(emailValue)) {
+    displayErrorMessage("Invalid email address.");
+    return;
+  }
+
+  const websiteInput = document.getElementById("YourWebsite");
+  const websiteValue = websiteInput.value.trim();
+  if (websiteValue.length < 5) {
+    displayErrorMessage("Your Website must be at least 5 characters.");
+    return;
+  }
+
+  const messageInput = document.getElementById("message");
+  const messageValue = messageInput.value.trim();
+  if (messageValue.length < 10) {
+    displayErrorMessage("Message must be at least 10 characters.");
+    return;
+  }
+
+  sendDataToAPI();
+}
+
+function displayErrorMessage(errorMessage) {
+  const errorDiv = document.querySelector(".error-message");
+  errorDiv.textContent = errorMessage;
+}
+
+function clearErrorMessages() {
+  const errorDiv = document.querySelector(".error-message");
+  errorDiv.textContent = "";
+}
+
+function sendDataToAPI() {
+  fetch("https://jsonplaceholder.typicode.com/todos/1")
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+
+      if (data.id === 1) {
+        alert("Registration successful!");
+
+        clearInputFields();
+      } else {
+        alert("Failed to register. Please try again.");
+      }
+    })
+    .catch((error) => console.error("Error:", error));
+}
+
+function clearInputFields() {
+  const inputFields = document.querySelectorAll(".reg-form, .contact-text-box");
+  inputFields.forEach((inputField) => (inputField.value = ""));
+}
