@@ -28,7 +28,7 @@ function showSlide(slideNumber) {
 setInterval(() => showSlide(index), transitionDelay);
 
 document.addEventListener("DOMContentLoaded", function () {
-  var progressBar = document.getElementById("progress-bar");
+  let progressBar = document.getElementById("progress-bar");
 
   progressBar.style.width = "0%";
 
