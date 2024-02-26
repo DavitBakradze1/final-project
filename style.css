@@ -249,6 +249,7 @@
   font-size: 43.17px;
   letter-spacing: 1.3px;
   width: 227px;
+  text-align: center;
   color: #373737;
   position: absolute;
 }
@@ -256,9 +257,14 @@
 .id-card {
   display: flex;
   flex-direction: column;
+  margin-left: 55%;
+}
+
+.header-id-card-box {
   position: absolute;
+  display: flex;
   top: 385px;
-  right: 308px;
+  width: 100%;
 }
 
 .id-social-box {
@@ -310,19 +316,22 @@
   border-radius: 25px;
 }
 
+.header-message-box {
+  width: 100%;
+  position: absolute;
+  bottom: 47px;
+  display: flex;
+  align-items: flex-end;
+}
+
 .message-box {
   display: flex;
   flex-direction: column;
-  position: absolute;
-  bottom: 47px;
-  right: 90px;
+  margin-left: 75%;
 }
 
 .about-creator {
   width: 100%;
-  padding-top: 135px;
-  padding-bottom: 100px;
-  margin-top: 135px;
   position: relative;
   display: flex;
   justify-content: center;
@@ -330,7 +339,9 @@
 
 .about-author {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  padding-top: 135px;
+  padding-bottom: 100px;
+  grid-template-columns: 334px 430px 300px;
   gap: 2%;
 }
 
@@ -390,7 +401,6 @@ p {
 .profile-photo {
   width: 430px;
   height: 603px;
-  background-color: #373737;
 }
 
 .profile-image {
@@ -463,7 +473,6 @@ p {
   width: 100%;
   padding-top: 54px;
   padding-bottom: 60px;
-  position: absolute;
   bottom: 0;
   background-color: #131a36;
   display: flex;
@@ -1320,17 +1329,32 @@ p {
 /* responsive */
 
 @media (max-width: 1240px) {
+  .header-id-card-box {
+    justify-content: center;
+  }
+
   .id-card {
-    right: 30%;
+    margin: 0%;
+  }
+
+  .header-message-box {
+    justify-content: center;
   }
 
   .message-box {
-    right: 37%;
+    margin: 0%;
   }
 
   .about-author {
     width: 100%;
     justify-content: center;
+    grid-template-columns: 334px 330px 300px;
+    padding-bottom: 0px;
+  }
+
+  .profile-photo {
+    width: 330px;
+    height: 503px;
   }
 
   .project-grid {
@@ -1364,25 +1388,217 @@ p {
     bottom: 0%;
     border-radius: 5%;
   }
-}
 
-@media (max-width: 1170px) {
-  .about-author {
-    display: grid;
-    grid-template-columns: 603px;
-    gap: 2%;
+  .services {
+    padding-top: 103px;
+    padding-bottom: 103px;
   }
 
+  .service-card {
+    width: 245px;
+  }
+
+  .recomendation {
+    width: 100%;
+    padding-top: 111px;
+    padding-bottom: 30px;
+  }
+
+  .my-recomendations {
+    flex-direction: column;
+    gap: 65px;
+  }
+
+  #cardContainer {
+    width: 150px;
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 1070px) {
   .contact-box-grid {
-    display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 25px;
   }
+}
+
+@media (max-width: 1023px) {
+  .about-author {
+    grid-template-columns: 425px;
+    grid-template-rows: 500px 400px 400px;
+    padding-top: 75px;
+    padding-bottom: 30px;
+  }
+
+  .profile-text {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+  }
+
+  .profile-skills {
+    width: 100%;
+    height: 400px;
+    padding: 0%;
+  }
+
+  h3 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .biography {
+    width: 100%;
+  }
+
+  p {
+    text-align: center;
+  }
+
+  .profile-photo {
+    width: 100%;
+    height: 100%;
+  }
 
   .servicce-card-container {
-    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .service-card {
+    width: 300px;
+  }
+
+  .projects {
+    padding-top: 71px;
+  }
+
+  .project-heading {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 970px) {
+  .about-author {
+    grid-template-columns: 425px;
+  }
+
+  .about-author {
+    padding-top: 0px;
+  }
+
+  .recomendator {
+    flex-direction: column;
+  }
+
+  #cardMessage {
+    width: 300px;
+    text-align: center;
+    margin: 0%;
+    order: 2;
+  }
+
+  .recomendation {
+    padding-top: 20px;
+    padding-bottom: 10px;
+  }
+
+  .quote-box {
+    margin-bottom: 10px;
+  }
+
+  .recomendator-proffesion {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 910px) {
+  .project-cards {
+    grid-template-columns: 50% 50%;
+  }
+
+  .project-card {
+    width: 300px;
+  }
+}
+
+@media (max-width: 900px) {
+  .number-box {
+    width: auto;
+    height: auto;
+  }
+
+  .number-one {
+    font-size: 100.3px;
+  }
+
+  .about {
+    font-size: 28px;
+  }
+
+  .id-text {
+    font-size: 32px;
+  }
+
+  .id-name {
+    font-size: 47px;
+  }
+
+  .id-work {
+    font-size: 19px;
+  }
+
+  .message-text {
+    font-size: 20px;
+  }
+
+  #progress-bar-container {
+    width: 300px;
+  }
+}
+
+@media (max-width: 800px) {
+  .servicce-card-container {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 360px 360px;
-    gap: 10px;
+  }
+}
+
+@media (max-width: 650px) {
+  .servicce-card-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media (max-width: 450px) {
+  .number-box {
+    top: 150px;
+    left: 0px;
+    width: 240px;
+  }
+
+  .id-text {
+    font-size: 22px;
+  }
+
+  .id-name {
+    font-size: 27px;
+  }
+
+  .id-work {
+    font-size: 13px;
+  }
+
+  .message-text {
+    font-size: 15px;
+  }
+
+  #progress-bar-container {
+    width: 260px;
+  }
+
+  .contact-type {
+    font-size: 20px;
+  }
+
+  .number {
+    font-size: 10px;
   }
 }
