@@ -320,7 +320,8 @@
 
 .about-creator {
   width: 100%;
-  height: 913px;
+  padding-top: 135px;
+  padding-bottom: 100px;
   margin-top: 135px;
   position: relative;
   display: flex;
@@ -460,7 +461,8 @@ p {
 
 .contact-box {
   width: 100%;
-  height: 210px;
+  padding-top: 54px;
+  padding-bottom: 60px;
   position: absolute;
   bottom: 0;
   background-color: #131a36;
@@ -613,7 +615,8 @@ p {
 
 .recomendation {
   width: 100%;
-  height: 570px;
+  padding-top: 211px;
+  padding-bottom: 189px;
   background-image: url(images/clip.jpg);
   position: relative;
   display: flex;
@@ -781,15 +784,56 @@ p {
 
 .project-card {
   display: none;
-  border: 1px solid #ccc;
-  background-color: #131a36;
   transition: all 0.3s ease-in-out;
   transition-delay: 0.2s;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
 .project-card.large {
   width: 900px;
   height: 700px;
+}
+
+.project-card:hover .project-description-box {
+  visibility: visible;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+}
+
+.project-description-box {
+  width: 100%;
+  height: 100%;
+  background-color: #131a36;
+  opacity: 0.8;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+}
+
+.project-date {
+  font-family: Muli;
+  font-size: 11px;
+  letter-spacing: 0.33px;
+  color: #dddddd;
+}
+
+.project-description-heading {
+  font-family: Glacial Indifference;
+  font-size: 23px;
+  font-weight: 300;
+  color: #ffffff;
 }
 
 .project-cards {
@@ -939,6 +983,7 @@ p {
 .article-photo {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
 .article-photo-box-second {
@@ -1270,4 +1315,74 @@ p {
   font-family: Muli;
   font-size: 15px;
   color: #a0a8b7;
+}
+
+/* responsive */
+
+@media (max-width: 1240px) {
+  .id-card {
+    right: 30%;
+  }
+
+  .message-box {
+    right: 37%;
+  }
+
+  .about-author {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .project-grid {
+    grid-template-columns: 900px;
+  }
+
+  .project-name-box {
+    display: none;
+  }
+
+  .article-p {
+    max-width: 450px;
+  }
+
+  .project-cards {
+    gap: 5px;
+  }
+
+  .project-card {
+    border-radius: 5%;
+  }
+
+  .project-image {
+    border-radius: 5%;
+  }
+
+  .project-description-box {
+    visibility: visible;
+    height: 50%;
+    position: absolute;
+    bottom: 0%;
+    border-radius: 5%;
+  }
+}
+
+@media (max-width: 1170px) {
+  .about-author {
+    display: grid;
+    grid-template-columns: 603px;
+    gap: 2%;
+  }
+
+  .contact-box-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 25px;
+  }
+
+  .servicce-card-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 360px 360px;
+    gap: 10px;
+  }
 }
